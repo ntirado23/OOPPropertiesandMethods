@@ -1,0 +1,120 @@
+using System;
+//beginning of object employee
+class Employee
+{
+
+  //fields
+    private string firstname;
+    private string lastname;
+    private string id;
+    private int age;
+    private string address;
+    private string phonenumber;
+    private string title;
+    private double yearlysalary;
+    private string employmentstatus;
+    private bool inactive;
+  private bool active;
+
+  //properties - can enable us to validate data that is entered. 
+  //same name as field - but properities will but uppercase
+  //properties are public while fields are private
+  public string FirstName{get; set;} //get set for properties we are not validating
+  public string LastName{get; set;}
+  public string Id{get;set;}  
+  public string EmployementStatus{get;set;}
+  public bool Inactive {get; set;}
+  public double YearlySalary {
+    get {return yearlysalary;}
+  set {
+  if (value >=1000){
+    yearlysalary = value;
+  }
+    else 
+     yearlysalary = 1000;
+  }
+  }
+  
+  public int Age {
+    get {return age;}
+    set{
+      //set evaluates value
+      if (value >=18)
+        age = value;
+      else
+        age = 18;
+
+      
+      
+    }
+  }
+  
+
+    public Employee()
+    {
+        FirstName = "Unknown";
+        LastName = "Unknown"; 
+        Id= "0";
+        Age = 0;
+        EmployementStatus = "active";
+
+    }
+    public Employee(string employeeFirstName, string EmployeeLastname, int EmployeeAge, string EmployeeId, double EmployeeYearlySalary)
+    {
+        FirstName = employeeFirstName;
+        LastName = EmployeeLastname;
+        Id = EmployeeId;
+        Age = EmployeeAge;
+        YearlySalary=EmployeeYearlySalary;
+        EmployementStatus = "active";
+      Inactive = false;
+    }
+
+
+    public void Intro()
+    {
+        Console.WriteLine("Hello! My name is " + FirstName + LastName);
+
+
+        Console.WriteLine("Here are some details about me:");
+        Console.WriteLine("Age: " + Age);
+        Console.WriteLine("Id: " + Id);
+        Console.WriteLine("Employement status: " + EmployementStatus);
+    
+
+    }
+
+  public void IncreaseSalary(double percent)
+    
+  { 
+    if (percent >=0)
+    {
+      YearlySalary = yearlysalary * percent + (yearlysalary);
+     Console.WriteLine ("Yearly salary  after " + percent +  " increase is " + YearlySalary);
+    }
+    else 
+      Console.WriteLine("Invalid input. Yearly Salary not updated");
+
+  }
+
+  public void  RemoveEmployee()
+
+  { 
+if (Inactive==true)
+{
+  Console.WriteLine("Employee is already inactive");
+
+
+
+}
+  else
+  {
+    Console.WriteLine("Employee removed");
+    Inactive=true;
+  }
+    
+    }
+  }
+ 
+
+
