@@ -1,0 +1,26 @@
+using System;
+
+class Program {
+  public static void Main (string[] args) {
+
+     Employee unknown = new Employee();; //constructor no parameters
+
+    unknown.Intro();
+
+    
+    Employee JohnSmith = new Employee("John", "Smith", 45, "1234", 5000); //constructor with parameters 
+    JohnSmith.Intro();
+    JohnSmith.RemoveEmployee();
+
+      Employee RobertDowney= new Employee("Robert", "Downey", 62, "5678", 100); //constructor with parameters 
+    RobertDowney.Intro();
+    
+ Employee MariaLambert = new Employee("Maria", "Lambert", 26, "S010", 80000); //constructor with parameters 
+   
+ MariaLambert.Intro();
+    MariaLambert.IncreaseSalary(0.07);
+    MariaLambert.RemoveEmployee();
+    MariaLambert.RemoveEmployee();
+
+   }
+}
